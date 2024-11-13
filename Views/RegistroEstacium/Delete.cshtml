@@ -1,0 +1,38 @@
+﻿@model GestionEstacionamientoRicardo.Models.RegistroEstancium
+
+@{
+    ViewData["Title"] = "Eliminar registro";
+}
+
+<div class="container mt-5">
+    <h1 class="text-danger mb-4">@ViewData["Title"]</h1>
+
+    <div class="alert alert-warning">
+        <h3 class="mb-3">¿Estás seguro de que deseas eliminar esta estancia?</h3>
+        <p>Esta acción es irreversible y no podrá deshacerse. Asegúrate de que deseas proceder.</p>
+    </div>
+
+    <div class="card shadow-sm mb-4">
+        <div class="card-body">
+            <h4 class="card-title text-secondary mb-4">Detalles de la Estancia</h4>
+            <dl class="row">
+                <dt class="col-sm-3 font-weight-bold">Fecha de Entrada</dt>
+                <dd class="col-sm-9">@Html.DisplayFor(model => model.FechaEntrada)</dd>
+
+                <dt class="col-sm-3 font-weight-bold">Hora de Salida</dt>
+                <dd class="col-sm-9">@Html.DisplayFor(model => model.FechaSalida)</dd>
+
+                <dt class="col-sm-3 font-weight-bold">Placa del Vehículo</dt>
+                <dd class="col-sm-9">@Html.DisplayFor(model => model.Vehiculo.Placa)</dd>
+            </dl>
+        </div>
+    </div>
+
+    <form asp-action="Delete">
+        <input type="hidden" asp-for="EstanciaId" />
+        <div class="d-flex justify-content-between">
+            <button type="submit" class="btn btn-danger me-2">Eliminar</button>
+            <a asp-action="Index" class="btn btn-secondary">Volver a la Lista</a>
+        </div>
+    </form>
+</div>

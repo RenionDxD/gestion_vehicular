@@ -1,0 +1,74 @@
+﻿@model GestionEstacionamientoRicardo.Models.Reporte
+@{
+    ViewData["Title"] = "Reporte de Estacionamiento";
+}
+
+<div class="container mt-5">
+    <h2 class="text-primary mb-4">@ViewData["Title"]</h2>
+
+    <form asp-action="GenerarReporte" method="post" class="bg-light p-4 rounded shadow-sm">
+        <div class="form-group mb-3">
+            <label asp-for="Fecha" class="control-label">Fecha</label>
+            <input asp-for="Fecha" class="form-control" type="date" />
+        </div>
+        <div class="row">
+            <div class="form-group col-md-6 mb-3">
+                <label asp-for="HoraInicio" class="control-label">Desde</label>
+                <input asp-for="HoraInicio" class="form-control" type="time" />
+            </div>
+            <div class="form-group col-md-6 mb-3">
+                <label asp-for="HoraFin" class="control-label">Hasta</label>
+                <input asp-for="HoraFin" class="form-control" type="time" />
+            </div>
+        </div>
+        <div class="text-center">
+            <input type="submit" value="Generar Reporte" class="btn btn-primary px-4" />
+        </div>
+    </form>
+
+    @if (Model != null && Model.Detalles.Count > 0)
+    {
+        <div class="mt-5">
+            <h3 class="text-success">Reporte para @Model.Fecha.ToString("dd/MM/yyyy")</h3>
+            <p><strong>Desde:</strong> @Model.HoraInicio.ToString(@"hh\:mm") 
+                <strong>Hasta:</strong> @Model.HoraFin.ToString(@"hh\:mm")</p>
+
+            <table class="table table-bordered table-hover mt-3">
+                <thead class="table-secondary">
+                    <tr>
+                        <th>Núm. Placa</th>
+                        <th>Tiempo Estacionado</th>
+                        <th>Tipo</th>
+                        <th>Cantidad a Pagar</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var detalle in Model.Detalles)
+                    {
+                        <tr>
+                            <td>@detalle.NumeroPlaca</td>
+                            <td>@detalle.TiempoEstacionado</td>
+                            <td>@detalle.Tipo</td>
+                            <td>@detalle.Monto.ToString("C")</td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+
+            <!-- Exportar a Excel -->
+            <form asp-action="ExportarExcel" method="post" class="text-center mt-4">
+                <input type="hidden" asp-for="Fecha" />
+                <input type="hidden" asp-for="HoraInicio" />
+                <input type="hidden" asp-for="HoraFin" />
+                @foreach (var detalle in Model.Detalles)
+                {
+                    <input type="hidden" name="Detalles[@Model.Detalles.IndexOf(detalle)].NumeroPlaca" value="@detalle.NumeroPlaca" />
+                    <input type="hidden" name="Detalles[@Model.Detalles.IndexOf(detalle)].TiempoEstacionado" value="@detalle.TiempoEstacionado" />
+                    <input type="hidden" name="Detalles[@Model.Detalles.IndexOf(detalle)].Tipo" value="@detalle.Tipo" />
+                    <input type="hidden" name="Detalles[@Model.Detalles.IndexOf(detalle)].Monto" value="@detalle.Monto" />
+                }
+                <input type="submit" value="Exportar a Excel" class="btn btn-success px-4" />
+            </form>
+        </div>
+    }
+</div>

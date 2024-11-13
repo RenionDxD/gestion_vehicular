@@ -1,0 +1,49 @@
+﻿@model GestionEstacionamientoRicardo.Models.RegistroEstancium
+
+@{
+    ViewData["Title"] = "Detalles del Registro";
+}
+
+<div class="container mt-5">
+    <h1 class="text-info mb-4">@ViewData["Title"]</h1>
+
+    <div class="card shadow-sm mb-4">
+        <div class="card-body">
+            <h4 class="card-title text-secondary mb-4">Detalles del Registro de Estacionamiento</h4>
+            <dl class="row">
+                <dt class="col-sm-3 font-weight-bold">
+                    @Html.DisplayNameFor(model => model.FechaEntrada)
+                </dt>
+                <dd class="col-sm-9">
+                    @Model.FechaEntrada.ToString("yyyy-MM-dd HH:mm")
+                </dd>
+
+                <dt class="col-sm-3 font-weight-bold">
+                    @Html.DisplayNameFor(model => model.FechaSalida)
+                </dt>
+                <dd class="col-sm-9">
+                    @if (Model.FechaSalida.HasValue)
+                    {
+                        @Model.FechaSalida.Value.ToString("yyyy-MM-dd HH:mm")
+                    }
+                    else
+                    {
+                        <text>N/A</text>
+                    }
+                </dd>
+
+                <dt class="col-sm-3 font-weight-bold">
+                    @Html.DisplayNameFor(model => model.Vehiculo)
+                </dt>
+                <dd class="col-sm-9">
+                    @Html.DisplayFor(model => model.Vehiculo.Placa) <!-- Mostrar Placa en lugar de VehiculoId para mayor claridad -->
+                </dd>
+            </dl>
+        </div>
+    </div>
+
+    <div class="d-flex justify-content-between">
+        <a asp-action="Edit" asp-route-id="@Model?.EstanciaId" class="btn btn-primary">Editar</a>
+        <a asp-action="Index" class="btn btn-secondary">Volver a la Lista</a>
+    </div>
+</div>

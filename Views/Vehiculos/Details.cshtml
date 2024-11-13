@@ -1,0 +1,29 @@
+﻿@model GestionEstacionamientoRicardo.Models.Vehiculo
+
+@{
+    ViewData["Title"] = "Detalles Del vehiculo";
+}
+
+<div class="container mt-5">
+    <h1 class="text-primary mb-3">@ViewData["Title"]</h1>
+
+    <div class="card shadow-sm">
+        <div class="card-body">
+            <h4 class="card-title text-secondary mb-4">Detalles del Vehículo</h4>
+            <dl class="row">
+                <dt class="col-sm-3 font-weight-bold">Placa</dt>
+                <dd class="col-sm-9">@Html.DisplayFor(model => model.Placa)</dd>
+
+                <dt class="col-sm-3 font-weight-bold">Tipo de Vehículo</dt>
+                <dd class="col-sm-9">@Html.DisplayFor(model => model.Tipo.Descripcion)</dd>
+            </dl>
+        </div>
+    </div>
+
+    <div class="mt-4">
+        <a asp-action="Edit" asp-route-id="@Model?.VehiculoId" class="btn btn-warning me-2">Editar</a>
+        <a asp-action="Index" class="btn btn-secondary">Volver a la Lista</a>
+    </div>
+</div>
+
+

@@ -1,0 +1,82 @@
+﻿@model GestionEstacionamientoRicardo.Models.Vehiculo
+
+@{
+    ViewData["Title"] = "Editar Vehiculo";
+}
+
+<div class="container mt-5">
+    <h1 class="text-primary mb-3">@ViewData["Title"]</h1>
+
+    <div class="card shadow-sm">
+        <div class="card-body">
+            <h4 class="card-title text-secondary mb-4">Editar Vehículo</h4>
+            <form asp-action="Edit">
+                <div asp-validation-summary="ModelOnly" class="text-danger mb-3"></div>
+
+                <input type="hidden" asp-for="VehiculoId" />
+
+                <div class="form-group mb-3">
+                    <label asp-for="Placa" class="form-label">Número de Placa</label>
+                    <input asp-for="Placa" class="form-control" placeholder="Ingrese el número de placa" />
+                    <span asp-validation-for="Placa" class="text-danger"></span>
+                </div>
+
+                <div class="form-group mb-4">
+                    <label asp-for="TipoId" class="form-label">Tipo de Vehículo</label>
+                    <select asp-for="TipoId" class="form-control" asp-items="ViewBag.TipoId">
+                        <option value="">Seleccione un tipo</option>
+                    </select>
+                    <span asp-validation-for="TipoId" class="text-danger"></span>
+                </div>
+
+                <div class="text-center">
+                    <input type="submit" value="Guardar Cambios" class="btn btn-primary px-4" />
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div class="mt-4">
+        <a asp-action="Index" class="btn btn-link">Volver a la Lista</a>
+    </div>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
+
+<!-- Código Original:
+
+
+<h1>Edit</h1>
+
+<h4>Vehiculo</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="VehiculoId" />
+            <div class="form-group">
+                <label asp-for="Placa" class="control-label"></label>
+                <input asp-for="Placa" class="form-control" />
+                <span asp-validation-for="Placa" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TipoId" class="control-label"></label>
+                <select asp-for="TipoId" class="form-control" asp-items="ViewBag.TipoId"></select>
+                <span asp-validation-for="TipoId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+
+-->

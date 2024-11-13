@@ -1,0 +1,37 @@
+﻿@model GestionEstacionamientoRicardo.Models.Vehiculo
+
+@{
+    ViewData["Title"] = "Eliminar";
+}
+
+<div class="container mt-5">
+    <h1 class="text-danger mb-3">@ViewData["Title"]</h1>
+    
+    <div class="alert alert-warning">
+        <h3>¿Estás seguro de que deseas eliminar este vehículo?</h3>
+        <p>Esta acción no se puede deshacer.</p>
+    </div>
+
+    <div class="card shadow-sm mb-4">
+        <div class="card-body">
+            <h4 class="card-title text-secondary mb-4">Detalles del Vehículo</h4>
+            <dl class="row">
+                <dt class="col-sm-3 font-weight-bold">Placa</dt>
+                <dd class="col-sm-9">@Html.DisplayFor(model => model.Placa)</dd>
+
+                <dt class="col-sm-3 font-weight-bold">Tipo de Vehículo</dt>
+                <dd class="col-sm-9">@Html.DisplayFor(model => model.Tipo.Descripcion)</dd>
+            </dl>
+        </div>
+    </div>
+
+    <form asp-action="Delete">
+        <input type="hidden" asp-for="VehiculoId" />
+        <div class="d-flex">
+            <input type="submit" value="Eliminar" class="btn btn-danger me-2" />
+            <a asp-action="Index" class="btn btn-secondary">Volver a la Lista</a>
+        </div>
+    </form>
+</div>
+
+
