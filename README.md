@@ -1,10 +1,27 @@
-# Gestion de veiculos
-## Description 
- - Aplicación Web de ASP.NET Core MVC
-- Lenguaje de programación C♯
-- Base de datos en SQL Server
-- Scaffold-DbContext
-- EntityFramework para crear vistas y procesos CRUD automáticos (todos las vistas, modelos y controladores son generados automaticamente por EntityFramewok
-- (Toda la documentacion se encuentra en microsoft ))
-## Installation 💡 
- Para ejecutar este proyecto debes crear la base de datos con el Script (SQLQuery1.sql) y cambiar la cadena de conexión del archivo appsettings.json 
+# 🚗 Gestión de Vehículos
+
+## Descripción 📄
+Este proyecto es una **Aplicación Web** desarrollada en **ASP.NET Core MVC** para la gestión de vehículos. Sus principales características son:
+
+- **Lenguaje de programación**: C♯
+- **Base de datos**: SQL Server
+- **Automatización de CRUD**: Uso de **Entity Framework** para generar automáticamente vistas, modelos y controladores (CRUD).
+- **Scaffold-DbContext**: Configurado para crear el esquema de base de datos y generar automáticamente los componentes de la aplicación.
+- Toda la documentación sobre Entity Framework y ASP.NET Core está disponible en la [documentación oficial de Microsoft](https://docs.microsoft.com).
+
+---
+
+## Instalación y Configuración 💡
+
+Para ejecutar este proyecto, sigue los pasos a continuación:
+
+1. **Base de Datos**: 
+   - Crea la base de datos ejecutando el script `BDGestionVehiculosRD.sql`.
+   - Este script ya incluye tres tipos de vehículos preconfigurados.
+
+2. **Cadena de Conexión**:
+   - Modifica la cadena de conexión en el archivo `appsettings.json` para adaptarla a tu entorno local o a tu servidor:
+   ```json
+   "ConnectionStrings": {
+       "DefaultConnection": "Server=localhost;Database=EstacionamientoDB;Integrated Security=true;"
+   }
