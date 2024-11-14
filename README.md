@@ -26,5 +26,5 @@ Para ejecutar este proyecto, sigue los pasos a continuación:
    - Modifica la cadena de conexión en el archivo `appsettings.json` para adaptarla a tu entorno local o a tu servidor:
    ```json
    "ConnectionStrings": {
-       "DefaultConnection": "Server=localhost;Database=EstacionamientoDB;Integrated Security=true;"
+       "DefaultConnection": "Server=localhost;Database=EstacionamientoDBS; integrated security=true;TrustServerCertificate=true;"
    }
