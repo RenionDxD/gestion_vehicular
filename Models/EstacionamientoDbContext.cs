@@ -75,6 +75,10 @@ public partial class EstacionamientoDbContext : DbContext
                 .HasConstraintName("FK__Vehiculos__TipoI__3B75D760");
         });
 
+        modelBuilder.Entity<RegistroEstancium>().HasOne(re => re.Vehiculo).WithMany(v => v.RegistroEstancia).HasForeignKey(re => re.VehiculoId).OnDelete(DeleteBehavior.Cascade);
+
+        modelBuilder.Entity<Vehiculo>().HasOne(v => v.Tipo).WithMany(t => t.Vehiculos).HasForeignKey(v => v.TipoId).OnDelete(DeleteBehavior.Cascade); // Eliminación en cascada
+
         OnModelCreatingPartial(modelBuilder);
     }
 

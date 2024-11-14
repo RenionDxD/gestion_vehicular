@@ -140,12 +140,16 @@ namespace GestionEstacionamientoRicardo.Controllers
         {
             //var tiposVehiculo = await _context.TiposVehiculos.FindAsync(id);
             var vehiculos = await _context.Vehiculos.Where(v => v.TipoId == id).ToListAsync();
+
+            foreach (var vehiculo in vehiculos) { var registros = await _context.RegistroEstancia.Where(re => re.VehiculoId == vehiculo.VehiculoId).ToListAsync(); _context.RegistroEstancia.RemoveRange(registros); }
+            _context.Vehiculos.RemoveRange(vehiculos);
+
             var tipoVehiculo = await _context.TiposVehiculos.FindAsync(id);
             if (vehiculos != null)
             {
                 _context.TiposVehiculos.Remove(tipoVehiculo);
             }
-
+            
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }

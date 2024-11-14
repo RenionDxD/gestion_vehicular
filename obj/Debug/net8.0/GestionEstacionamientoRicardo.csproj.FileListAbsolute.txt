@@ -294,3 +294,4 @@ D:\Proyectos.Net\GestionEstacionamientoRicardo\bin\Debug\net8.0\ExcelNumberForma
 D:\Proyectos.Net\GestionEstacionamientoRicardo\bin\Debug\net8.0\RBush.dll
 D:\Proyectos.Net\GestionEstacionamientoRicardo\bin\Debug\net8.0\SixLabors.Fonts.dll
 D:\Proyectos.Net\GestionEstacionamientoRicardo\bin\Debug\net8.0\System.IO.Packaging.dll
+D:\Proyectos.Net\GestionEstacionamientoRicardo\obj\Debug\net8.0\GestionEstacionamientoRicardo.sourcelink.json
