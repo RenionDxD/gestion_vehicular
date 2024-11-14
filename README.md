@@ -18,6 +18,7 @@ Para ejecutar este proyecto, sigue los pasos a continuación:
 1. **Base de Datos**: 
    - Crea la base de datos ejecutando el script `BDGestionVehiculosRD.sql`.
    - Este script ya incluye tres tipos de vehículos preconfigurados.
+   - El gestor para mejor comodidad use Sql Server managment studio
 
 2. **Cadena de Conexión**:
    - Modifica la cadena de conexión en el archivo `appsettings.json` para adaptarla a tu entorno local o a tu servidor:
