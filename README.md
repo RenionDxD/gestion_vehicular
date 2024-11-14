@@ -18,6 +18,8 @@ Para ejecutar este proyecto, sigue los pasos a continuación:
 1. **Base de Datos**: 
    - Crea la base de datos ejecutando el script `BDGestionVehiculosRD.sql`.
    - Este script ya incluye tres tipos de vehículos preconfigurados.
+   - Para generar la BD descarge SQL Server 2022, abra BDGestionVehiculosRD.sql en Visual Studio y ejecute el script o ejecute en Sql Server managment studio como
+     script nuevo o copie todo el texto e insertelo en nuevo QSLQuery y ejecute la hoja 
    - El gestor para mejor comodidad use Sql Server managment studio
 
 2. **Cadena de Conexión**:
