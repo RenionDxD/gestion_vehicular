@@ -63,8 +63,18 @@ namespace GestionEstacionamientoRicardo.Controllers
         public async Task<IActionResult> Create([Bind("EstanciaId,VehiculoId,FechaEntrada,FechaSalida")] RegistroEstancium registroEstancium)
         {
             registroEstancium.FechaEntrada = DateTime.Now;
+            var vehiculo = await _context.Vehiculos.FindAsync(registroEstancium.VehiculoId); 
+            bool vehiculoEnEstacionamiento = await _context.RegistroEstancia.AnyAsync(re => re.Vehiculo.Placa == vehiculo.Placa && re.FechaSalida == null);
+            if (vehiculoEnEstacionamiento)
+            {
+                ModelState.AddModelError("VehiculoID", "Este vehículo sigue en el estacionamiento."); 
+                ViewData["VehiculoId"] = new SelectList(_context.Vehiculos, "VehiculoId", "VehiculoId", registroEstancium.VehiculoId); 
+                return View(registroEstancium);
+            }
+            
             if (!ModelState.IsValid)
             {
+                
                 _context.Add(registroEstancium);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));

@@ -1,6 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
+﻿using System.ComponentModel.DataAnnotations;
+using Microsoft.EntityFrameworkCore;
 
 namespace GestionEstacionamientoRicardo.Models;
 
@@ -9,8 +8,8 @@ public partial class Vehiculo
     public int VehiculoId { get; set; }
 
 
-    [Required(ErrorMessage = "El número de placa es obligatorio")]
-    [StringLength(10, ErrorMessage = "El número de placa no puede exceder los 10 caracteres")]
+    [Required]
+    [StringLength(9, ErrorMessage = "El número de placa no puede exceder los 9 caracteres")]
     public string Placa { get; set; } = null!;
 
     public int TipoId { get; set; }
