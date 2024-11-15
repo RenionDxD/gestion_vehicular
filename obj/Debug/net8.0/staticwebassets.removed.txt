@@ -1,1 +1,1 @@
-D:\Proyectos.Net\Pruebas\gestion_vehicular\wwwroot\faviconP.ico
+D:\Proyectos.Net\proyecto\gestion_vehicular\wwwroot\faviconP.ico
