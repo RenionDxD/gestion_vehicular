@@ -1,35 +1,52 @@
-# 🚗 Gestión de Vehículos
+# 🚗 **Gestión de Vehículos**
 
 ## Descripción 📄
-Este proyecto es una **Aplicación Web** desarrollada en **ASP.NET Core MVC** para la gestión de vehículos. Sus principales características son:
+Esta es una **Aplicación Web** diseñada para la gestión eficiente de vehículos. Desarrollada con **ASP.NET Core MVC**, cuenta con las siguientes características principales:
 
-- **Lenguaje de programación**: C♯
-- **Base de datos**: SQL Server
-- **Automatización de CRUD**: Uso de **Entity Framework** para generar automáticamente vistas, modelos y controladores (CRUD).
-- **Scaffold-DbContext**: Configurado para crear el esquema de base de datos y generar automáticamente los componentes de la aplicación.
-- Toda la documentación sobre Entity Framework y ASP.NET Core está disponible en la [documentación oficial de Microsoft](https://docs.microsoft.com).
+- **Lenguaje de Programación**: C♯
+- **Base de Datos**: SQL Server
+- **Automatización CRUD**: Implementación mediante **Entity Framework** para la generación automática de vistas, modelos y controladores.
+- **Scaffold-DbContext**: Utilizado para crear el esquema de base de datos y los componentes de la aplicación.
+- **Documentación**: Puedes consultar más detalles sobre **Entity Framework** y **ASP.NET Core** en la [documentación oficial de Microsoft](https://docs.microsoft.com).
 
 ---
 
 ## Instalación y Configuración 💡
 
-Para ejecutar este proyecto, sigue los pasos a continuación:
+### 1. **Preparación de la Base de Datos**
 
-1. **Base de Datos**: 
-   - Crea la base de datos ejecutando el script `BDGestionVehiculosRD.sql`.
-   - Este script ya incluye tres tipos de vehículos preconfigurados.
-   - Para generar la BD descarge SQL Server 2022, abra BDGestionVehiculosRD.sql en Visual Studio y ejecute el script o ejecute en Sql Server managment studio como
-     script nuevo o copie todo el texto e insertelo en nuevo QSLQuery y ejecute la hoja 
-   - El gestor para mejor comodidad use Sql Server managment studio
-   - para ejecutar de desde Visual code vaya a extenciones -> administrar extenciones -> busque e instale SQL Tools -> se abrira un ejecutor de SQL en el archivo .sql
-     ejecutelo para crear la Base de datos
+- **Ejecución del Script**:
+  - Encuentra el archivo `BDGestionVehiculosRD.sql` en el proyecto.
+  - Ejecuta este script para crear la base de datos, la cual incluye tres tipos de vehículos preconfigurados.
+  - Si prefieres una base de datos más simple, utiliza el script alternativo `BDGestionVehiculosRD_Simple.sql`.
 
-   -**importante!!!:**
-   - En el .sql debera cambiar la ruta de creacion al archivo de usted Nombre de la ruta, este puede variar a (C: o D:) : `C:\Program Files\Microsoft SQL Server\MSSQL16.MSSQLSERVER\MSSQL\DATA`
+- **Opciones para Ejecutar el Script**:
+  - Descarga e instala **SQL Server 2022** junto con **SQL Server Management Studio (SSMS)**:
+    1. Abre el script en SSMS como un nuevo query.
+    2. Ejecuta el archivo para crear la base de datos.
+  - Si usas **Visual Studio**:
+    1. Abre el archivo `.sql` directamente en Visual Studio.
+    2. Ejecuta el script utilizando su integración de SQL.
+  - Si no aparece el ejecutador de SQL:
+    1. Instala la extensión **SQL Tools** desde el administrador de extensiones.
+    2. Ejecuta el script desde el editor para crear la base de datos.
 
-3. **Cadena de Conexión**:
-   - Modifica la cadena de conexión en el archivo `appsettings.json` para adaptarla a tu entorno local o a tu servidor:
-   ```json
-   "ConnectionStrings": {
-       "DefaultConnection": "Server=localhost;Database=EstacionamientoDBS; integrated security=true;TrustServerCertificate=true;"
-   }
+- **Nota Importante**:
+  Asegúrate de actualizar la ruta de creación del archivo de la base de datos en el script. Modifica la línea que contiene la ruta, adaptándola a tu sistema. Ejemplo:
+
+
+Cambia `C:` o `D:` según tu configuración local, si utilizas `BDGestionVehiculosRD_Simple.sql` no es necesario el cambio de rutas.
+
+---
+
+### 2. **Configuración de la Cadena de Conexión**
+
+- Abre el archivo `appsettings.json` en el directorio raíz del proyecto.
+- Localiza el bloque `ConnectionStrings` y ajusta la conexión de acuerdo con tu entorno local o servidor. Por ejemplo:
+```json
+"ConnectionStrings": {
+    "DefaultConnection": "Server=localhost;Database=EstacionamientoDBS;Integrated Security=True;TrustServerCertificate=True;"
+}
+
+
+
