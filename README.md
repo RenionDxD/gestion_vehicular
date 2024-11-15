@@ -24,7 +24,10 @@ Para ejecutar este proyecto, sigue los pasos a continuación:
    - para ejecutar de desde Visual code vaya a extenciones -> administrar extenciones -> busque e instale SQL Tools -> se abrira un ejecutor de SQL en el archivo .sql
      ejecutelo para crear la Base de datos
 
-2. **Cadena de Conexión**:
+   -**importante!!!:**
+   - En el .sql debera cambiar la ruta de creacion al archivo de usted ejemplo: `C:\Program Files\Microsoft SQL Server\MSSQL16.MSSQLSERVER\MSSQL\DATA`
+
+3. **Cadena de Conexión**:
    - Modifica la cadena de conexión en el archivo `appsettings.json` para adaptarla a tu entorno local o a tu servidor:
    ```json
    "ConnectionStrings": {
