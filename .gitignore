@@ -28,12 +28,6 @@ bld/
 *.log
 
 
-# Exclude bin and obj directories 
-bin/ 
-obj/
 
-
-/obj/Debug/net8.0/GestionEstacionamientoRicardo.AssemblyInfoInputs.cache
-/obj/Debug/net8.0/GestionEstacionamientoRicardo.AssemblyInfo.cs
 
 
