@@ -1,13 +1,7 @@
-﻿using GestionEstacionamientoRicardo.Models;
+﻿using ClosedXML.Excel;
+using GestionEstacionamientoRicardo.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
-using System;
-using System.Linq;
-using System.Threading.Tasks;
-using ClosedXML.Excel;
-using System.IO;
 
 
 // La verdad este si lo hice con copilot y mis practicas den DAD Software
@@ -16,9 +10,10 @@ namespace GestionEstacionamientoRicardo.Controllers
 {
     public class ReportesController : Controller
     {
-        private readonly EstacionamientoDbContext _context; 
+        private readonly EstacionamientoDbContext _context;
         public ReportesController(EstacionamientoDbContext context) { _context = context; }
-        [HttpGet] public IActionResult Reporte() 
+        [HttpGet]
+        public IActionResult Reporte()
         {
             var model = new Reporte
             {
@@ -72,30 +67,51 @@ namespace GestionEstacionamientoRicardo.Controllers
             {
                 var worksheet = workbook.Worksheets.Add("Reporte");
 
-                // Encabezados de las columnas
+
                 worksheet.Cell(1, 1).Value = "Núm. Placa";
                 worksheet.Cell(1, 2).Value = "Tiempo Estacionado";
                 worksheet.Cell(1, 3).Value = "Tipo";
                 worksheet.Cell(1, 4).Value = "Cantidad a Pagar";
 
-                // Llenar datos de los detalles en las celdas
+
+                var headerRange = worksheet.Range("A1:D1");
+                headerRange.Style.Font.Bold = true;
+                headerRange.Style.Font.FontColor = XLColor.White;
+                headerRange.Style.Fill.BackgroundColor = XLColor.DarkGreen;
+                headerRange.Style.Alignment.Horizontal = XLAlignmentHorizontalValues.Center;
+                headerRange.Style.Border.OutsideBorder = XLBorderStyleValues.Thin;
+                headerRange.Style.Border.OutsideBorderColor = XLColor.Black;
+
+
                 for (int i = 0; i < model.Detalles.Count; i++)
                 {
                     worksheet.Cell(i + 2, 1).Value = model.Detalles[i].NumeroPlaca;
                     worksheet.Cell(i + 2, 2).Value = model.Detalles[i].TiempoEstacionado;
                     worksheet.Cell(i + 2, 3).Value = model.Detalles[i].Tipo;
                     worksheet.Cell(i + 2, 4).Value = model.Detalles[i].Monto;
+
+
+                    worksheet.Cell(i + 2, 4).Style.NumberFormat.Format = "$ #,##0.00";
+
+
+                    var dataRow = worksheet.Range(i + 2, 1, i + 2, 4);
+                    dataRow.Style.Border.OutsideBorder = XLBorderStyleValues.Thin;
+                    dataRow.Style.Border.OutsideBorderColor = XLColor.LightGray;
                 }
 
-                // Exportar el archivo en formato Excel
+
+                worksheet.Columns().AdjustToContents();
+
+
                 using (var stream = new MemoryStream())
                 {
                     workbook.SaveAs(stream);
                     var content = stream.ToArray();
-                    return File(content, "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet", "reporte.xlsx");
+                    return File(content, "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet", "reporteDia_" + DateTime.Now + ".xlsx");
                 }
             }
         }
+
 
     }
 }
