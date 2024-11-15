@@ -1,4 +1,4 @@
-# 🚗 **Gestión de Vehículos**  ***(USE LA VERCION DE LA RAMA DEVELOP)***
+# 🚗 **Gestión de Vehículos**  ***(USE LA VERSION DE LA RAMA DEVELOP)***
 
 ## Descripción 📄
 Esta es una **Aplicación Web** diseñada para la gestión eficiente de vehículos. Desarrollada con **ASP.NET Core MVC**, cuenta con las siguientes características principales:
