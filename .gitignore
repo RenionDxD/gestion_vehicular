@@ -26,8 +26,11 @@ bld/
 # Others
 *.db
 *.log
-*.obj
-*.bin
+
+
+# Exclude bin and obj directories 
+bin/ 
+obj/
 
 
 /obj/Debug/net8.0/GestionEstacionamientoRicardo.AssemblyInfoInputs.cache
