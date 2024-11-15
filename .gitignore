@@ -27,3 +27,8 @@ bld/
 *.db
 *.log
 
+
+/obj/Debug/net8.0/GestionEstacionamientoRicardo.AssemblyInfoInputs.cache
+/obj/Debug/net8.0/GestionEstacionamientoRicardo.AssemblyInfo.cs
+
+
