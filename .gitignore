@@ -28,15 +28,4 @@ bld/
 # Others
 *.db
 *.log
-# Exclude bin and obj directories 
-bin/ 
-obj/
-
-
-
-
-# Staging area
-/stage/
-# Build directory
-/build/
 
