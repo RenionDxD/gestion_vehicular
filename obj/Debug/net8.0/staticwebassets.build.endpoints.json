@@ -167,8 +167,90 @@
       ]
     },
     {
-      "Route": "favicon.61n19gt1b8.ico",
+      "Route": "favicon.1opd6ooc3m.ico",
       "AssetFile": "favicon.ico",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "318"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/x-icon"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"z5atdXCh/bDxiE6e3SUL711OoOK1XNliPXAYPqrBZGg=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Fri, 15 Nov 2024 04:14:05 GMT"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "1opd6ooc3m"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-z5atdXCh/bDxiE6e3SUL711OoOK1XNliPXAYPqrBZGg="
+        },
+        {
+          "Name": "label",
+          "Value": "favicon.ico"
+        }
+      ]
+    },
+    {
+      "Route": "favicon.ico",
+      "AssetFile": "favicon.ico",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "318"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/x-icon"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"z5atdXCh/bDxiE6e3SUL711OoOK1XNliPXAYPqrBZGg=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Fri, 15 Nov 2024 04:14:05 GMT"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-z5atdXCh/bDxiE6e3SUL711OoOK1XNliPXAYPqrBZGg="
+        }
+      ]
+    },
+    {
+      "Route": "faviconP.61n19gt1b8.ico",
+      "AssetFile": "faviconP.ico",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -207,13 +289,13 @@
         },
         {
           "Name": "label",
-          "Value": "favicon.ico"
+          "Value": "faviconP.ico"
         }
       ]
     },
     {
-      "Route": "favicon.ico",
-      "AssetFile": "favicon.ico",
+      "Route": "faviconP.ico",
+      "AssetFile": "faviconP.ico",
       "Selectors": [],
       "ResponseHeaders": [
         {
