@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Proyectos.Net\\GestionEstacionamientoRicardo\\GestionEstacionamientoRicardo.csproj": {}
+    "D:\\Proyectos.Net\\pruebas\\gestion_vehicular\\GestionEstacionamientoRicardo.csproj": {}
   },
   "projects": {
-    "D:\\Proyectos.Net\\GestionEstacionamientoRicardo\\GestionEstacionamientoRicardo.csproj": {
+    "D:\\Proyectos.Net\\pruebas\\gestion_vehicular\\GestionEstacionamientoRicardo.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Proyectos.Net\\GestionEstacionamientoRicardo\\GestionEstacionamientoRicardo.csproj",
+        "projectUniqueName": "D:\\Proyectos.Net\\pruebas\\gestion_vehicular\\GestionEstacionamientoRicardo.csproj",
         "projectName": "GestionEstacionamientoRicardo",
-        "projectPath": "D:\\Proyectos.Net\\GestionEstacionamientoRicardo\\GestionEstacionamientoRicardo.csproj",
+        "projectPath": "D:\\Proyectos.Net\\pruebas\\gestion_vehicular\\GestionEstacionamientoRicardo.csproj",
         "packagesPath": "C:\\Users\\Kirit\\.nuget\\packages\\",
-        "outputPath": "D:\\Proyectos.Net\\GestionEstacionamientoRicardo\\obj\\",
+        "outputPath": "D:\\Proyectos.Net\\pruebas\\gestion_vehicular\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
