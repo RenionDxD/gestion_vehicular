@@ -60,13 +60,6 @@ namespace GestionEstacionamientoRicardo.Controllers
         {
             if (!ModelState.IsValid)
             {
-                bool placaExiste = await _context.Vehiculos.AnyAsync(v => v.Placa == vehiculo.Placa); ///por si la placa esta registrada
-                if (placaExiste) 
-                { 
-                    ModelState.AddModelError("Placa", "La placa ya está registrada.");
-                    ViewData["TipoId"] = new SelectList(_context.TiposVehiculos, "TipoId", "Descripcion", vehiculo.TipoId); 
-                    return View(vehiculo);
-                }
                 _context.Add(vehiculo);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));

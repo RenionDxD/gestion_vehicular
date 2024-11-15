@@ -1,7 +1,11 @@
-﻿using GestionEstacionamientoRicardo.Models;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
+using GestionEstacionamientoRicardo.Models;
 
 namespace GestionEstacionamientoRicardo.Controllers
 {
@@ -59,18 +63,8 @@ namespace GestionEstacionamientoRicardo.Controllers
         public async Task<IActionResult> Create([Bind("EstanciaId,VehiculoId,FechaEntrada,FechaSalida")] RegistroEstancium registroEstancium)
         {
             registroEstancium.FechaEntrada = DateTime.Now;
-            var vehiculo = await _context.Vehiculos.FindAsync(registroEstancium.VehiculoId);
-            bool vehiculoEnEstacionamiento = await _context.RegistroEstancia.AnyAsync(re => re.Vehiculo.Placa == vehiculo.Placa && re.FechaSalida == null);
-            if (vehiculoEnEstacionamiento)
-            {
-                ModelState.AddModelError("VehiculoID", "Este vehículo sigue en el estacionamiento.");
-                ViewData["VehiculoId"] = new SelectList(_context.Vehiculos, "VehiculoId", "Placa", registroEstancium.VehiculoId);
-                return View(registroEstancium);
-            }
-
             if (!ModelState.IsValid)
             {
-
                 _context.Add(registroEstancium);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
@@ -108,7 +102,7 @@ namespace GestionEstacionamientoRicardo.Controllers
                 return NotFound();
             }
 
-            if (!ModelState.IsValid)
+            if (ModelState.IsValid)
             {
                 try
                 {
@@ -128,7 +122,7 @@ namespace GestionEstacionamientoRicardo.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["VehiculoId"] = new SelectList(_context.Vehiculos, "VehiculoId", "Placa", registroEstancium.VehiculoId);
+            ViewData["VehiculoId"] = new SelectList(_context.Vehiculos, "VehiculoId", "VehiculoId", registroEstancium.VehiculoId);
             return View(registroEstancium);
         }
 
@@ -175,8 +169,8 @@ namespace GestionEstacionamientoRicardo.Controllers
                 registroEstancium.FechaSalida = DateTime.Now;
 
 
-                var tiempo = registroEstancium.FechaSalida.Value - registroEstancium.FechaEntrada;
-                var tarifaPorMinuto = registroEstancium.Vehiculo.Tipo.TarifaPorMinuto;
+                var tiempo = registroEstancium.FechaSalida.Value - registroEstancium.FechaEntrada; 
+                var tarifaPorMinuto = registroEstancium.Vehiculo.Tipo.TarifaPorMinuto; 
                 registroEstancium.Monto = CalcularCobro(tiempo, tarifaPorMinuto);
 
                 //registroEstancium.Monto = CalcularCobro(tiempoEnParkin, Tarifa);
