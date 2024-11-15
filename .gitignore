@@ -1,5 +1,7 @@
 # Visual Studio
 .vs/
+# Visual Studio
+.vs/
 .vscode/
 *.user
 *.suo
@@ -28,4 +30,4 @@ bld/
 *.log
 
 /obj/Debug/net8.0/GestionEstacionamientoRicardo.AssemblyInfoInputs.cache
-/.gitignore
+/obj/Debug/net8.0/GestionEstacionamientoRicardo.AssemblyInfo.cs
