@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("GestionEstacionamientoRicardo")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+4c61c4a902e161ef913473a8f5a506a8984dc4f7")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+c47dd867dd3405a0bc560943c2c0971cb46043ea")]
 [assembly: System.Reflection.AssemblyProductAttribute("GestionEstacionamientoRicardo")]
 [assembly: System.Reflection.AssemblyTitleAttribute("GestionEstacionamientoRicardo")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
