@@ -27,3 +27,5 @@ bld/
 *.db
 *.log
 
+/obj/Debug/net8.0/GestionEstacionamientoRicardo.AssemblyInfoInputs.cache
+/.gitignore
