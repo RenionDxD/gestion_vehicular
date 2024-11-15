@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "KqIah5UfRYE=",
+  "dgSpecHash": "j4HFsi6ZTtY=",
   "success": true,
-  "projectFilePath": "D:\\Proyectos.Net\\pruebas\\gestion_vehicular\\GestionEstacionamientoRicardo.csproj",
+  "projectFilePath": "D:\\Proyectos.Net\\proyecto\\gestion_vehicular\\GestionEstacionamientoRicardo.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Kirit\\.nuget\\packages\\azure.core\\1.38.0\\azure.core.1.38.0.nupkg.sha512",
     "C:\\Users\\Kirit\\.nuget\\packages\\azure.identity\\1.11.4\\azure.identity.1.11.4.nupkg.sha512",
