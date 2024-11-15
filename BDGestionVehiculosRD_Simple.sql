@@ -1,9 +1,9 @@
 -- Crear la base de datos básica
 USE [master]
 GO
-CREATE DATABASE [EstacionamientoDBSS]
+CREATE DATABASE [EstacionamientoDBS]
 GO
-USE [EstacionamientoDBSS]
+USE [EstacionamientoDBS]
 GO
 
 -- Crear tabla TiposVehiculo
