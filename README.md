@@ -21,6 +21,8 @@ Para ejecutar este proyecto, sigue los pasos a continuación:
    - Para generar la BD descarge SQL Server 2022, abra BDGestionVehiculosRD.sql en Visual Studio y ejecute el script o ejecute en Sql Server managment studio como
      script nuevo o copie todo el texto e insertelo en nuevo QSLQuery y ejecute la hoja 
    - El gestor para mejor comodidad use Sql Server managment studio
+   - para ejecutar de desde Visual code vaya a extenciones -> administrar extenciones -> busque e instale SQL Tools -> se abrira un ejecutor de SQL en el archivo .sql
+     ejecutelo para crear la Base de datos
 
 2. **Cadena de Conexión**:
    - Modifica la cadena de conexión en el archivo `appsettings.json` para adaptarla a tu entorno local o a tu servidor:
