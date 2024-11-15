@@ -25,7 +25,7 @@ Para ejecutar este proyecto, sigue los pasos a continuación:
      ejecutelo para crear la Base de datos
 
    -**importante!!!:**
-   - En el .sql debera cambiar la ruta de creacion al archivo de usted ejemplo: `C:\Program Files\Microsoft SQL Server\MSSQL16.MSSQLSERVER\MSSQL\DATA`
+   - En el .sql debera cambiar la ruta de creacion al archivo de usted Nombre de la ruta, este puede variar a (C: o D:) : `C:\Program Files\Microsoft SQL Server\MSSQL16.MSSQLSERVER\MSSQL\DATA`
 
 3. **Cadena de Conexión**:
    - Modifica la cadena de conexión en el archivo `appsettings.json` para adaptarla a tu entorno local o a tu servidor:
